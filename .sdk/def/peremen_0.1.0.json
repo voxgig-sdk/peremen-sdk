@@ -1,0 +1,212 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Peremen API",
+    "description": "The Peremen API enables integration with the peremen.app browser extension, offering a seamless connection and secure access to Russian services. It facilitates various operations, including user authentication and session management, while ensuring privacy and security for its users.",
+    "version": "2.0.0",
+    "contact": {
+      "url": "https://github.com/l0v3m0n3y/peremen"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://peremen.space/api/v2",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/premium/user-email-verification": {
+      "post": {
+        "summary": "Request OTP verification code",
+        "description": "Requests an OTP (One-Time Password) verification code to be sent to the specified email address for user authentication and session management.",
+        "operationId": "requestVerificationCode",
+        "tags": [
+          "Authentication"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "email"
+                ],
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "format": "email",
+                    "description": "The email address to which the verification code will be sent",
+                    "example": "user@example.com"
+                  }
+                }
+              },
+              "examples": {
+                "basic": {
+                  "summary": "Basic email verification request",
+                  "value": {
+                    "email": "user@example.com"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Verification code successfully sent",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Indicates whether the request was successful",
+                      "example": true
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Response message",
+                      "example": "Verification code sent successfully"
+                    },
+                    "email": {
+                      "type": "string",
+                      "format": "email",
+                      "description": "The email address where the code was sent",
+                      "example": "user@example.com"
+                    }
+                  }
+                },
+                "examples": {
+                  "success": {
+                    "summary": "Successful response",
+                    "value": {
+                      "success": true,
+                      "message": "Verification code sent successfully",
+                      "email": "user@example.com"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - Invalid email format or missing required fields",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "Error message describing what went wrong",
+                      "example": "Invalid email format"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests - Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Rate limit exceeded. Please try again later."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "An internal error occurred. Please try again later."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "EmailVerificationRequest": {
+        "type": "object",
+        "required": [
+          "email"
+        ],
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "description": "The email address to verify"
+          }
+        }
+      },
+      "SuccessResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Indicates whether the operation was successful"
+          },
+          "message": {
+            "type": "string",
+            "description": "Human-readable message about the operation result"
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Always false for error responses"
+          },
+          "error": {
+            "type": "string",
+            "description": "Error message describing what went wrong"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Authentication",
+      "description": "Operations related to user authentication and email verification"
+    }
+  ],
+  "externalDocs": {
+    "description": "Find more information and source code on GitHub",
+    "url": "https://github.com/l0v3m0n3y/peremen"
+  }
+}

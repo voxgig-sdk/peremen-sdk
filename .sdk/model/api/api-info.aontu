@@ -1,0 +1,25 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      auth: false
+      contact: {
+        url: "https://github.com/l0v3m0n3y/peremen"
+      }
+      description: "The Peremen API enables integration with the peremen.app browser extension, offering a seamless connection and secure access to Russian services. It facilitates various operations, including user authentication and session management, while ensuring privacy and security for its users."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://peremen.space/api/v2"
+        }
+      ]
+      summary: "The Peremen API enables integration with the peremen.app browser extension, offering a seamless connection and secure access to Russian services."
+      title: "Peremen API"
+      version: "2.0.0"
+      website: "https://github.com/l0v3m0n3y/peremen"
+    }
+  }
+}
+

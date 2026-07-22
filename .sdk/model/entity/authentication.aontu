@@ -1,0 +1,54 @@
+# Entity: authentication
+
+main: kit: entity: authentication: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "email"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "success"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+  ]
+
+  name: "authentication"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/premium/user-email-verification"
+          parts: [
+            "premium"
+            "user-email-verification"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}
