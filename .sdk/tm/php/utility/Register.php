@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ PeremenUtility::setRegistrar(function (PeremenUtility $u): void {
     $u->prepare_params = [PeremenPrepareParams::class, 'call'];
     $u->prepare_path = [PeremenPreparePath::class, 'call'];
     $u->prepare_query = [PeremenPrepareQuery::class, 'call'];
+    $u->graphql_body = [PeremenGraphql::class, 'body'];
+    $u->graphql_errors = [PeremenGraphql::class, 'errors'];
     $u->result_basic = [PeremenResultBasic::class, 'call'];
     $u->result_body = [PeremenResultBody::class, 'call'];
     $u->result_headers = [PeremenResultHeaders::class, 'call'];

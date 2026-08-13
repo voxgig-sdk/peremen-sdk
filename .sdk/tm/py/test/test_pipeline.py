@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import PeremenSDK
-from core.error import PeremenError
-from core.result import PeremenResult
-from core.response import PeremenResponse
-from core.spec import PeremenSpec
-from feature.base_feature import PeremenBaseFeature
+from projectname_sdk.core.error import PeremenError
+from projectname_sdk.core.result import PeremenResult
+from projectname_sdk.core.response import PeremenResponse
+from projectname_sdk.core.spec import PeremenSpec
+from projectname_sdk.feature.base_feature import PeremenBaseFeature
 
 
 def _client():

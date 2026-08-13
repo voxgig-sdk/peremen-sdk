@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import PeremenControl
-from core.error import PeremenError
-from core.result import PeremenResult
-from core.spec import PeremenSpec
+from projectname_sdk.config import make_config
+from projectname_sdk.features import _make_feature
+from projectname_sdk.core.control import PeremenControl
+from projectname_sdk.core.error import PeremenError
+from projectname_sdk.core.result import PeremenResult
+from projectname_sdk.core.spec import PeremenSpec
 
 
 # True when this SDK was generated with the named feature.

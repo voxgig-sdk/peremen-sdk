@@ -67,6 +67,7 @@ class PeremenConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/premium/user-email-verification',
                   'parts' => [

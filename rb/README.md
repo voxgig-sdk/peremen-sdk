@@ -33,7 +33,7 @@ client = PeremenSDK.new
 ### 4. Create, update, and remove
 
 ```ruby
-# create returns the bare created Authentication record.
+# create returns the ENTITY — call data_get for the created Authentication record.
 created = client.Authentication.create({ "email" => "example_email", "message" => "example_message" })
 
 ```
@@ -113,7 +113,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = PeremenSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 authentication = client.Authentication.create({ "email" => "example", "message" => "example", "success" => true })
 puts authentication
 ```

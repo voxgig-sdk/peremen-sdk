@@ -213,9 +213,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local authentication, err = client:Authentication():load()
+    local authentication, err = client:Authentication():list()
     if err then error(err) end
-    -- authentication is the loaded record
+    -- authentication is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.

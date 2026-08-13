@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# Peremen SDK exists test
 
 import pytest
 from peremen_sdk import PeremenSDK

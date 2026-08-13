@@ -36,7 +36,7 @@ const client = new PeremenSDK()
 ### 4. Create, update, and remove
 
 ```ts
-// Create — returns the created Authentication
+// Create — returns the created Authentication ENTITY (.data() for the record)
 const created = await client.Authentication().create({
   email: 'example_email',
   message: 'example_message',
@@ -119,7 +119,8 @@ Create a mock client for unit testing — no server required:
 const client = PeremenSDK.test()
 
 const authentication = await client.Authentication().create({ email: 'example_email', message: 'example_message', success: true })
-// authentication is a bare entity populated with mock response data
+// authentication is the entity, populated with mock response data
+// — call authentication.data() for the record itself
 console.log(authentication)
 ```
 
