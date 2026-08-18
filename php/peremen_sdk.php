@@ -40,7 +40,7 @@ class PeremenSDK
         $utility = new PeremenUtility();
         $this->_utility = $utility;
 
-        $config = PeremenConfig::make_config();
+        $config = PeremenConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

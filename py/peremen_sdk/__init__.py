@@ -23,8 +23,8 @@ class PeremenSDK:
         utility = PeremenUtility()
         self._utility = utility
 
-        from peremen_sdk.config import make_config
-        config = make_config()
+        from peremen_sdk.config import shared_config
+        config = shared_config()
 
         self._rootctx = utility.make_context({
             "client": self,

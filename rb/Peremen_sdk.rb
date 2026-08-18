@@ -28,7 +28,7 @@ class PeremenSDK
     utility = PeremenUtility.new
     @_utility = utility
 
-    config = PeremenConfig.make_config
+    config = PeremenConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

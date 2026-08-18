@@ -36,7 +36,7 @@ class Config {
 
 
   options = {
-    base: 'https://peremen.space/api/v2',
+    base: "https://peremen.space/api/v2",
 
     headers: {
       "content-type": "application/json"
@@ -55,7 +55,6 @@ class Config {
     "authentication": {
       "fields": [
         {
-          "active": true,
           "name": "email",
           "op": {
             "create": {
@@ -63,23 +62,15 @@ class Config {
               "type": "`$STRING`"
             }
           },
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "message",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "success",
-          "req": false,
-          "type": "`$BOOLEAN`",
-          "index$": 2
+          "type": "`$BOOLEAN`"
         }
       ],
       "name": "authentication",
@@ -89,7 +80,6 @@ class Config {
           "name": "create",
           "points": [
             {
-              "active": true,
               "args": {},
               "kind": "http",
               "method": "POST",
@@ -102,11 +92,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "create"
+          ]
         }
       },
       "relations": {
