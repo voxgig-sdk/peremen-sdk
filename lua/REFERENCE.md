@@ -90,9 +90,9 @@ local authentication = client:Authentication(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `email` | `string` | No |  |
-| `message` | `string` | No |  |
-| `success` | `boolean` | No |  |
+| `email` | `string` | No | The email address where the code was sent |
+| `message` | `string` | No | Response message |
+| `success` | `boolean` | No | Indicates whether the request was successful |
 
 ### Field Usage by Operation
 

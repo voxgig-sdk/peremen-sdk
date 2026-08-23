@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "Peremen",
+      slug = "peremen",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -35,14 +38,17 @@ local function make_config()
                 ["type"] = "`$STRING`",
               },
             },
+            ["short"] = "The email address where the code was sent",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "message",
+            ["short"] = "Response message",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "success",
+            ["short"] = "Indicates whether the request was successful",
             ["type"] = "`$BOOLEAN`",
           },
         },

@@ -93,9 +93,9 @@ authentication = client.Authentication
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `email` | `String` | No |  |
-| `message` | `String` | No |  |
-| `success` | `Boolean` | No |  |
+| `email` | `String` | No | The email address where the code was sent |
+| `message` | `String` | No | Response message |
+| `success` | `Boolean` | No | Indicates whether the request was successful |
 
 ### Field Usage by Operation
 

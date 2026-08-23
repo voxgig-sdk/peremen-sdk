@@ -231,9 +231,9 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `email` |  |
-| `message` |  |
-| `success` |  |
+| `email` | The email address where the code was sent |
+| `message` | Response message |
+| `success` | Indicates whether the request was successful |
 
 Operations: Create.
 
@@ -258,9 +258,9 @@ Create an instance: `authentication = client.Authentication`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `email` | `String` |  |
-| `message` | `String` |  |
-| `success` | `Boolean` |  |
+| `email` | `String` | The email address where the code was sent |
+| `message` | `String` | Response message |
+| `success` | `Boolean` | Indicates whether the request was successful |
 
 #### Example: Create
 

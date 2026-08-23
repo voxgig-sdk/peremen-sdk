@@ -226,9 +226,9 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `email` |  |
-| `message` |  |
-| `success` |  |
+| `email` | The email address where the code was sent |
+| `message` | Response message |
+| `success` | Indicates whether the request was successful |
 
 Operations: Create.
 
@@ -253,9 +253,9 @@ Create an instance: `local authentication = client:Authentication(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `email` | `string` |  |
-| `message` | `string` |  |
-| `success` | `boolean` |  |
+| `email` | `string` | The email address where the code was sent |
+| `message` | `string` | Response message |
+| `success` | `boolean` | Indicates whether the request was successful |
 
 #### Example: Create
 

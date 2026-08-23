@@ -6,7 +6,7 @@ The Golang SDK for the Peremen API — an entity-oriented client using standard 
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Authentication(nil)` — each with the same small set of operations (`Create`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -258,9 +258,9 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"email"` |  |
-| `"message"` |  |
-| `"success"` |  |
+| `"email"` | The email address where the code was sent |
+| `"message"` | Response message |
+| `"success"` | Indicates whether the request was successful |
 
 Operations: Create.
 
@@ -285,9 +285,9 @@ Create an instance: `authentication := client.Authentication(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `email` | `string` |  |
-| `message` | `string` |  |
-| `success` | `bool` |  |
+| `email` | `string` | The email address where the code was sent |
+| `message` | `string` | Response message |
+| `success` | `bool` | Indicates whether the request was successful |
 
 #### Example: Create
 

@@ -42,18 +42,21 @@
                 }
               },
               "req": false,
+              "short": "The email address where the code was sent",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "message",
               "req": false,
+              "short": "Response message",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "success",
               "req": false,
+              "short": "Indicates whether the request was successful",
               "type": "`$BOOLEAN`"
             }
           ],

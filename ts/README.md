@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -283,9 +283,9 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `email` |  |
-| `message` |  |
-| `success` |  |
+| `email` | The email address where the code was sent |
+| `message` | Response message |
+| `success` | Indicates whether the request was successful |
 
 Operations: create.
 
@@ -310,9 +310,9 @@ Create an instance: `const authentication = client.Authentication()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `email` | `string` |  |
-| `message` | `string` |  |
-| `success` | `boolean` |  |
+| `email` | `string` | The email address where the code was sent |
+| `message` | `string` | Response message |
+| `success` | `boolean` | Indicates whether the request was successful |
 
 #### Example: Create
 

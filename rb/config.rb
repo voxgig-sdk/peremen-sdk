@@ -19,6 +19,9 @@ module PeremenConfig
     {
       "main" => {
         "name" => "Peremen",
+        "slug" => "peremen",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
@@ -47,14 +50,17 @@ module PeremenConfig
                   "type" => "`$STRING`",
                 },
               },
+              "short" => "The email address where the code was sent",
               "type" => "`$STRING`",
             },
             {
               "name" => "message",
+              "short" => "Response message",
               "type" => "`$STRING`",
             },
             {
               "name" => "success",
+              "short" => "Indicates whether the request was successful",
               "type" => "`$BOOLEAN`",
             },
           ],

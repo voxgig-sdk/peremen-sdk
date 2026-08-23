@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "Peremen",
+			"slug": "peremen",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -39,14 +42,17 @@ func MakeConfig() map[string]any {
 								"type": "`$STRING`",
 							},
 						},
+						"short": "The email address where the code was sent",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "message",
+						"short": "Response message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "success",
+						"short": "Indicates whether the request was successful",
 						"type": "`$BOOLEAN`",
 					},
 				},

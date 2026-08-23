@@ -98,9 +98,9 @@ fmt.Println(authentication.GetName()) // "authentication"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `email` | `string` | No |  |
-| `message` | `string` | No |  |
-| `success` | `bool` | No |  |
+| `email` | `string` | No | The email address where the code was sent |
+| `message` | `string` | No | Response message |
+| `success` | `bool` | No | Indicates whether the request was successful |
 
 ### Field Usage by Operation
 

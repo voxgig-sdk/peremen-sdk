@@ -87,9 +87,9 @@ authentication = client.Authentication()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `email` | `str` | No |  |
-| `message` | `str` | No |  |
-| `success` | `bool` | No |  |
+| `email` | `str` | No | The email address where the code was sent |
+| `message` | `str` | No | Response message |
+| `success` | `bool` | No | Indicates whether the request was successful |
 
 ### Field Usage by Operation
 
