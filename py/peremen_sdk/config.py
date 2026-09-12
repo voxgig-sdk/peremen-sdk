@@ -1,6 +1,14 @@
 # Peremen SDK configuration
 
 
+# The sekreto plugin DEFINITIONS the model selected per feature, imported
+# above by name from the modules the catalogue's active `plugin.def`
+# entries declare. Handed to each feature (secrets builds its Sekreto
+# with them): a provider kind not listed here is unknown to that SDK.
+FEATURE_PLUGINS = {
+}
+
+
 _shared_config = None
 
 
@@ -53,6 +61,7 @@ def make_config():
       "authentication": {
         "fields": [
           {
+            "format": "email",
             "name": "email",
             "op": {
               "create": {
@@ -85,15 +94,23 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/premium/user-email-verification",
-                "parts": [
-                  "premium",
-                  "user-email-verification",
+                "segments": [
+                  {
+                    "lit": "premium",
+                  },
+                  {
+                    "lit": "user-email-verification",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "premium",
+                  "user-email-verification",
+                ],
               },
             ],
           },

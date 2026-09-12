@@ -32,6 +32,7 @@ local function make_config()
       ["authentication"] = {
         ["fields"] = {
           {
+            ["format"] = "email",
             ["name"] = "email",
             ["op"] = {
               ["create"] = {
@@ -64,14 +65,22 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/premium/user-email-verification",
-                ["parts"] = {
-                  "premium",
-                  "user-email-verification",
+                ["segments"] = {
+                  {
+                    ["lit"] = "premium",
+                  },
+                  {
+                    ["lit"] = "user-email-verification",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "premium",
+                  "user-email-verification",
                 },
               },
             },

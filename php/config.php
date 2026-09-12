@@ -58,6 +58,7 @@ class PeremenConfig
         'authentication' => [
           'fields' => [
             [
+              'format' => 'email',
               'name' => 'email',
               'op' => [
                 'create' => [
@@ -90,14 +91,22 @@ class PeremenConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/premium/user-email-verification',
-                  'parts' => [
-                    'premium',
-                    'user-email-verification',
+                  'segments' => [
+                    [
+                      'lit' => 'premium',
+                    ],
+                    [
+                      'lit' => 'user-email-verification',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'premium',
+                    'user-email-verification',
                   ],
                 ],
               ],

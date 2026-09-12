@@ -36,6 +36,7 @@ func MakeConfig() map[string]any {
 			"authentication": map[string]any{
 				"fields": []any{
 					map[string]any{
+						"format": "email",
 						"name": "email",
 						"op": map[string]any{
 							"create": map[string]any{
@@ -68,14 +69,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/premium/user-email-verification",
-								"parts": []any{
-									"premium",
-									"user-email-verification",
+								"segments": []any{
+									map[string]any{
+										"lit": "premium",
+									},
+									map[string]any{
+										"lit": "user-email-verification",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"premium",
+									"user-email-verification",
 								},
 							},
 						},
@@ -87,6 +96,17 @@ func MakeConfig() map[string]any {
 			},
 		},
 	}
+}
+
+// The plugin definitions the model selected per feature, as []any so a
+// feature package can consume them without core naming its types. Empty
+// when no active feature declares active plugin groups for this target.
+var featurePlugins = map[string][]any{
+}
+
+// FeaturePlugins is the definitions list for one feature's chain.
+func FeaturePlugins(name string) []any {
+	return featurePlugins[name]
 }
 
 var (

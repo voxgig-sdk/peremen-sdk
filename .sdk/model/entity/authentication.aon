@@ -6,6 +6,7 @@ main: kit: entity: authentication: {
 
   fields: [
     {
+      format: "email"
       name: "email"
       op: {
         create: {
@@ -39,9 +40,13 @@ main: kit: entity: authentication: {
         {
           method: "POST"
           orig: "/premium/user-email-verification"
-          parts: [
-            "premium"
-            "user-email-verification"
+          segments: [
+            {
+              lit: "premium"
+            }
+            {
+              lit: "user-email-verification"
+            }
           ]
           transform: {
             req: "`reqdata`"
