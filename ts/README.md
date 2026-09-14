@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { PeremenSDK } from '@voxgig-sdk/peremen'
+import { PeremenSDK } from '@voxgig-sdk/peremen-sdk'
 
 const client = new PeremenSDK()
 ```
@@ -404,7 +404,7 @@ peremen/
 Import the SDK from the package root:
 
 ```ts
-import { PeremenSDK } from '@voxgig-sdk/peremen'
+import { PeremenSDK } from '@voxgig-sdk/peremen-sdk'
 ```
 
 ### Entity state

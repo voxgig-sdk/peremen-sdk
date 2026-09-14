@@ -109,7 +109,7 @@ local result, err = client:Authentication():create({ email = "example", message 
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/peremen` | publish pending — [install from git tag](https://github.com/voxgig-sdk/peremen-sdk/releases) |
+| TypeScript | `@voxgig-sdk/peremen-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/peremen-sdk/releases) |
 | Python | `voxgig-sdk-peremen` | publish pending — [install from git tag](https://github.com/voxgig-sdk/peremen-sdk/releases) |
 | PHP | `voxgig-sdk/peremen` | publish pending — [install from git tag](https://github.com/voxgig-sdk/peremen-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/peremen-sdk/go` | `go get github.com/voxgig-sdk/peremen-sdk/go@latest` |
@@ -123,7 +123,7 @@ local result, err = client:Authentication():create({ email = "example", message 
 ### TypeScript
 
 ```ts
-import { PeremenSDK } from '@voxgig-sdk/peremen'
+import { PeremenSDK } from '@voxgig-sdk/peremen-sdk'
 
 const client = new PeremenSDK()
 
