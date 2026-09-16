@@ -29,5 +29,146 @@
         "success": true
       }
     }
+  },
+  "requests": {
+    "POST /premium/user-email-verification": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "requestVerificationCode",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "examples": {
+                "basic": {
+                  "summary": "Basic email verification request",
+                  "value": {
+                    "email": "user@example.com"
+                  }
+                }
+              },
+              "schema": {
+                "properties": {
+                  "email": {
+                    "description": "The email address to which the verification code will be sent",
+                    "example": "user@example.com",
+                    "format": "email",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "email"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "examples": {
+                  "success": {
+                    "summary": "Successful response",
+                    "value": {
+                      "email": "user@example.com",
+                      "message": "Verification code sent successfully",
+                      "success": true
+                    }
+                  }
+                },
+                "schema": {
+                  "properties": {
+                    "email": {
+                      "description": "The email address where the code was sent",
+                      "example": "user@example.com",
+                      "format": "email",
+                      "type": "string"
+                    },
+                    "message": {
+                      "description": "Response message",
+                      "example": "Verification code sent successfully",
+                      "type": "string"
+                    },
+                    "success": {
+                      "description": "Indicates whether the request was successful",
+                      "example": true,
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Verification code successfully sent"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message describing what went wrong",
+                      "example": "Invalid email format",
+                      "type": "string"
+                    },
+                    "success": {
+                      "example": false,
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad request - Invalid email format or missing required fields"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "example": "Rate limit exceeded. Please try again later.",
+                      "type": "string"
+                    },
+                    "success": {
+                      "example": false,
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Too many requests - Rate limit exceeded"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "example": "An internal error occurred. Please try again later.",
+                      "type": "string"
+                    },
+                    "success": {
+                      "example": false,
+                      "type": "boolean"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

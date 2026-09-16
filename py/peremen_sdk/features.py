@@ -1,12 +1,18 @@
 # Peremen SDK feature factory
 
 from peremen_sdk.feature.base_feature import PeremenBaseFeature
+from peremen_sdk.feature.ratelimit_feature import PeremenRatelimitFeature
+from peremen_sdk.feature.retry_feature import PeremenRetryFeature
 from peremen_sdk.feature.test_feature import PeremenTestFeature
+from peremen_sdk.feature.timeout_feature import PeremenTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: PeremenBaseFeature(),
+    "ratelimit": lambda: PeremenRatelimitFeature(),
+    "retry": lambda: PeremenRetryFeature(),
     "test": lambda: PeremenTestFeature(),
+    "timeout": lambda: PeremenTimeoutFeature(),
 }
 
 
