@@ -109,12 +109,12 @@ local result, err = client:Authentication():create({ email = "example", message 
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/peremen-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/peremen-sdk/releases) |
-| Python | `voxgig-sdk-peremen` | publish pending — [install from git tag](https://github.com/voxgig-sdk/peremen-sdk/releases) |
-| PHP | `voxgig-sdk/peremen` | publish pending — [install from git tag](https://github.com/voxgig-sdk/peremen-sdk/releases) |
+| TypeScript | `@voxgig-sdk/peremen-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/peremen-sdk/tags) |
+| Python | `voxgig-sdk-peremen` | publish pending — [install from git tag](https://github.com/voxgig-sdk/peremen-sdk/tags) |
+| PHP | `voxgig-sdk/peremen` | publish pending — [install from git tag](https://github.com/voxgig-sdk/peremen-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/peremen-sdk/go` | `go get github.com/voxgig-sdk/peremen-sdk/go@latest` |
-| Ruby | `voxgig-sdk-peremen` | publish pending — [install from git tag](https://github.com/voxgig-sdk/peremen-sdk/releases) |
-| Lua | `voxgig-sdk-peremen` | publish pending — [install from git tag](https://github.com/voxgig-sdk/peremen-sdk/releases) |
+| Ruby | `voxgig-sdk-peremen` | publish pending — [install from git tag](https://github.com/voxgig-sdk/peremen-sdk/tags) |
+| Lua | `voxgig-sdk-peremen` | publish pending — [install from git tag](https://github.com/voxgig-sdk/peremen-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/peremen-sdk/go-cli` | `go install github.com/voxgig-sdk/peremen-sdk/go-cli/cmd/peremen@latest` |
 | Go MCP server | `github.com/voxgig-sdk/peremen-sdk/go-mcp` | `go get github.com/voxgig-sdk/peremen-sdk/go-mcp@latest` |
 
