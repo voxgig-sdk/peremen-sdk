@@ -11,19 +11,12 @@ const FEATURE_CLASS = {
     test: TestFeature_1.TestFeature,
     timeout: TimeoutFeature_1.TimeoutFeature,
 };
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS = {};
 exports.FEATURE_PLUGINS = FEATURE_PLUGINS;
 class Config {
     makeFeature(fn) {
         const fc = FEATURE_CLASS[fn];
         const fi = new fc();
-        // TODO: errors etc
         return fi;
     }
     // False for a feature added at runtime via options.extend (station's
@@ -113,8 +106,9 @@ class Config {
         "authentication": {
             "fields": [
                 {
-                    "format": "email",
                     "name": "email",
+                    "title": "Email",
+                    "type": "`$STRING`",
                     "op": {
                         "create": {
                             "req": true,
@@ -122,17 +116,19 @@ class Config {
                         }
                     },
                     "short": "The email address where the code was sent",
-                    "type": "`$STRING`"
+                    "format": "email"
                 },
                 {
                     "name": "message",
-                    "short": "Response message",
-                    "type": "`$STRING`"
+                    "title": "Message",
+                    "type": "`$STRING`",
+                    "short": "Response message"
                 },
                 {
                     "name": "success",
-                    "short": "Indicates whether the request was successful",
-                    "type": "`$BOOLEAN`"
+                    "title": "Success",
+                    "type": "`$BOOLEAN`",
+                    "short": "Indicates whether the request was successful"
                 }
             ],
             "name": "authentication",
@@ -142,7 +138,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/premium/user-email-verification",
@@ -154,15 +149,17 @@ class Config {
                                     "lit": "user-email-verification"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "premium",
+                                "user-email-verification"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "premium",
-                                "user-email-verification"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }

@@ -90,8 +90,9 @@ func MakeConfig() map[string]any {
 			"authentication": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"format": "email",
 						"name": "email",
+						"title": "Email",
+						"type": "`$STRING`",
 						"op": map[string]any{
 							"create": map[string]any{
 								"req": true,
@@ -99,17 +100,19 @@ func MakeConfig() map[string]any {
 							},
 						},
 						"short": "The email address where the code was sent",
-						"type": "`$STRING`",
+						"format": "email",
 					},
 					map[string]any{
 						"name": "message",
-						"short": "Response message",
+						"title": "Message",
 						"type": "`$STRING`",
+						"short": "Response message",
 					},
 					map[string]any{
 						"name": "success",
-						"short": "Indicates whether the request was successful",
+						"title": "Success",
 						"type": "`$BOOLEAN`",
+						"short": "Indicates whether the request was successful",
 					},
 				},
 				"name": "authentication",
@@ -119,7 +122,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/premium/user-email-verification",
@@ -131,15 +133,17 @@ func MakeConfig() map[string]any {
 										"lit": "user-email-verification",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"premium",
 									"user-email-verification",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},

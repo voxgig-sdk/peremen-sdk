@@ -86,8 +86,9 @@ local function make_config()
       ["authentication"] = {
         ["fields"] = {
           {
-            ["format"] = "email",
             ["name"] = "email",
+            ["title"] = "Email",
+            ["type"] = "`$STRING`",
             ["op"] = {
               ["create"] = {
                 ["req"] = true,
@@ -95,17 +96,19 @@ local function make_config()
               },
             },
             ["short"] = "The email address where the code was sent",
-            ["type"] = "`$STRING`",
+            ["format"] = "email",
           },
           {
             ["name"] = "message",
-            ["short"] = "Response message",
+            ["title"] = "Message",
             ["type"] = "`$STRING`",
+            ["short"] = "Response message",
           },
           {
             ["name"] = "success",
-            ["short"] = "Indicates whether the request was successful",
+            ["title"] = "Success",
             ["type"] = "`$BOOLEAN`",
+            ["short"] = "Indicates whether the request was successful",
           },
         },
         ["name"] = "authentication",
@@ -115,7 +118,6 @@ local function make_config()
             ["name"] = "create",
             ["points"] = {
               {
-                ["args"] = {},
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/premium/user-email-verification",
@@ -127,15 +129,17 @@ local function make_config()
                     ["lit"] = "user-email-verification",
                   },
                 },
-                ["select"] = {},
-                ["transform"] = {
-                  ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
-                },
                 ["parts"] = {
                   "premium",
                   "user-email-verification",
                 },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {},
+                ["select"] = {},
               },
             },
           },
